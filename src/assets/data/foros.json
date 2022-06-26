@@ -1,0 +1,11 @@
+{
+    "foros":[{
+        "titulo":"Prueba Foro",
+        "contenido":"Esto no es mas que una prueba", 
+        "fecha":"02-06-2022",
+        "categoria":"", 
+        "autor":"Ignacio Morales",
+        "cantvisitas":"1", 
+        "puntuacion":"0"
+    }]
+}

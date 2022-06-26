@@ -1,0 +1,61 @@
+header{
+    font-size:22px;
+    // color:rgb(78, 61, 227);
+    // margin:5px;
+    // padding:5px 5px 10px 5px;
+
+    .contenedorLogo{
+        height: 60px;
+        width: 100px;
+        margin-left: 10%;
+        margin-bottom: 10%;
+    }
+    
+    .contenedorLogo img{
+        width: 110%;
+    }
+
+    h2{
+        float: right;
+    }
+
+    h1{
+        float: left;
+    }
+
+    .iniciarSesion{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        height: 70px;
+        width: 70px;
+    }
+    
+    .iniciarSesion img{
+        width: 120%;
+    }
+
+    form {
+        margin: auto;
+        color: white;
+        background-color: #3D99CE;
+        border-radius: 20px;
+        width: 250px;
+        height: 50px;
+    }
+
+    input {
+        all: unset;
+        font: 16px system-ui;
+        color: rgb(255, 255, 255);
+        padding-left: 20px;
+        padding-top: 13px;
+    }
+
+    ::placeholder {
+        color: #fff;
+        opacity: 0.7; 
+        margin-top: 1%;
+    }
+}
+
+

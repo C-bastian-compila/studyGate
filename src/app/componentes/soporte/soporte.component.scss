@@ -1,0 +1,72 @@
+@import "../../../styles.scss";
+
+#soporteSeccion{
+    background-color: rgb(255, 255, 255);
+
+    .navbar{
+        a{
+            font-size: larger;
+        }
+    } 
+}
+
+
+@mixin media-up($breakpoint){
+    @media  screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+.container{
+    margin-top: 20px;
+    
+}
+
+#soporteS.container{
+    
+    @include media-up(sm){
+        transform: scale(0.9);
+    }
+    @include media-up(lg){
+        transform: scale(1);
+    }
+}
+
+button{
+    margin-top: 10px;
+}
+
+.borde{
+    margin-top: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    border-radius: 10px;
+    background-color: #3D99CE;
+    
+    .custom{
+        background-color: white;
+        //padding: 5%;
+        box-shadow: 4px 4px 5px rgb(41, 39, 39);
+        border-radius: 10px;
+
+        @include media-up(md){
+            height: 60%;
+        }
+        @include media-up(lg){
+            height: 80%;
+        }
+        
+    }
+
+    p{
+        @include media-up(md){
+            padding:2%;
+        }
+        @include media-up(lg){
+            padding: 4%;
+        }
+        
+    }
+}

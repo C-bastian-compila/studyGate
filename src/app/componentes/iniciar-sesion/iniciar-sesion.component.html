@@ -1,0 +1,53 @@
+<body>
+    <app-encabezado></app-encabezado>
+    <app-navbar></app-navbar>
+
+    <div id="fondo "class="pt-3 px-s pt-xl-5 px-xl-5 text-center" style="background-image: url('../../../assets/imagenes/universitarios1.png'); background-repeat: no-repeat; background-size: cover;">
+        <main>
+            <div class="panel">
+                <form [formGroup]="formularioIniciarSesion" (ngSubmit)="onSubmit()" novalidate>
+                    <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                    <h1 id="titulo" class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+
+                    <!-- INPUT CORREO -->
+
+                    <mat-form-field appearance="fill">
+                        <!-- input -->
+                        <mat-label>Correo Electrónico</mat-label>
+                        <input matInput formControlName="email">
+                        <!-- Validacion -->
+                        <mat-hint *ngIf="formularioIniciarSesion.controls['email'].hasError('required')">Este campo es obligatorio</mat-hint>
+                    </mat-form-field>
+
+                    <!-- INPUT CLAVE -->
+
+                    <mat-form-field appearance="fill">
+                        <!-- input -->
+                        <mat-label>Clave</mat-label>
+                        <input type="password" matInput formControlName="clave" >
+                        <!-- Validacion -->
+                        <mat-hint *ngIf="formularioIniciarSesion.controls['clave'].hasError('required')">Este campo es obligatorio</mat-hint>
+                    </mat-form-field>
+
+                    <!-- CASILLA RECUERDAME -->
+
+                    <div class="checkbox mb-3">
+                        <label id="idRecuerdame">
+                            <input type="checkbox" value="remember-me"> Mantener sesión iniciada
+                        </label>
+                    </div>
+
+                    <!-- BOTON ENVIAR FORMULARIO-->
+
+                    <button id="botonRegistro" bmat-raised-button [disabled]="!formularioIniciarSesion.valid" color="primary" type="submit">Ingresar</button>
+    
+                    <p id="extraOptions" class="mt-3 mb-3">
+                        <a href = "https://es.wikihow.com/recordar-una-contrase%C3%B1a-olvidada">¿Olvidaste tu contraseña?</a><br/>
+                        <a [routerLink]="['/registro']">Crear Cuenta</a><br/>
+                        
+                    </p>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>

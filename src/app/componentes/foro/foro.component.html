@@ -1,0 +1,165 @@
+<body>
+    <app-encabezado></app-encabezado>
+    <app-navbar></app-navbar>
+
+    <!-- Categorias -->
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs justify-content-center">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>MATEMÁTICAS</a>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>LITERATURA</a>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>QUÍMICA</a>
+      </li>
+      <li [ngbNavItem]="4">
+        <a ngbNavLink>HISTORIA</a>
+      </li>
+      <li [ngbNavItem]="5">
+        <a ngbNavLink>BIOLOGÍA</a>
+      </li>
+      <li [ngbNavItem]="6">
+        <a ngbNavLink>INGLES</a>
+      </li>
+      <li [ngbNavItem]="7">
+        <a ngbNavLink>ALGEBRA</a>
+      </li>
+      <li [ngbNavItem]="8">
+        <a ngbNavLink>OTROS</a>
+      </li>
+    </ul>
+
+    <section id = "foroSection2">
+
+        <div class="container align-items-center  " >
+
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4276e7">
+                <div class="container-fluid">
+
+                    <div class="navbar-nav mx-auto">
+                        <a class="nav-link" aria-current="page" [routerLink]="['/foro']">Mas Populares</a>
+                        <a class="nav-link" [routerLink]="['/foro']">Mejor Votados</a>
+                        <a class="nav-link" [routerLink]="['/foro']">Recientes</a>
+                    </div>
+
+                </div>
+            </nav>
+    
+            <div *ngIf="activeId==1">
+              <li *ngFor="let item of matematica">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==2">
+              <li *ngFor="let item of literatura">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==3">
+              <li *ngFor="let item of quimica">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==4">
+              <li *ngFor="let item of historia">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==5">
+              <li *ngFor="let item of biologia">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==6">
+              <li *ngFor="let item of ingles">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==7">
+              <li *ngFor="let item of algebra">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+            <div *ngIf="activeId==8">
+              <li *ngFor="let item of otros">
+                <div id="foros" class="container">
+                  <div class="row row-cols-1 gy-3">
+                      <div class="borde col" >
+                          <h1> <a href="#">{{item.pregunta}} </a></h1>
+                          <p class="text-center">{{item.descripcion}}</p>
+                      </div>  
+                  </div>
+                </div>
+              </li>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Derechos reservados LGM</p>
+        <ul class="pie" align="right">
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="">Whatsapp</a></li>
+        </ul>
+    </footer>
+
+</body>

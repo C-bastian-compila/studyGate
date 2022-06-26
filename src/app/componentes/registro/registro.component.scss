@@ -1,0 +1,105 @@
+@import "../../../styles.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: center;
+}
+
+#fondo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    padding-bottom: 200px;
+}
+
+#titulo {
+    color: $vColorBackground;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    // lign-algn: center;
+}
+
+.panel{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: center;
+
+
+    width: 100%;
+    max-width: 330px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: auto;
+    background-color: rgba(61, 153, 206, 0.87);
+    border-radius: 25px;
+}
+
+mat-form-field {
+
+    padding-bottom: 15px;    
+}
+
+#botonRegistro{
+
+    margin-top: -5px;
+
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+
+    color: $vColorMain2;
+
+}
+
+p a{
+    text-decoration: none;
+    color:$vColorBackground
+}
+p a:hover {
+    color:$vColorMain2;
+    text-decoration:underline;
+}
+
+
+
+// .form-signin {
+//     // font-family: 'Inter', sans-serif;
+// }
+
+// // .form-signin .checkbox {
+// //   font-weight: 400;|
+// // }
+
+// #extraOptions {
+//     color: darkslategray;
+// }
+// p a{
+//     text-decoration: none;
+//     color:$vColorBackground
+// }
+// p a:hover {
+//     color:$vColorMain2;
+//     text-decoration:underline;
+// }
+
+// // .form-floating  {
+// //     padding-bottom: 35px;
+// // }
+// // .form-signin .form-floating:focus-within {
+// //   z-index: 2;
+// // }

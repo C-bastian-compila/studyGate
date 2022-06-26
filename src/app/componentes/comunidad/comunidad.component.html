@@ -1,0 +1,106 @@
+<body>
+
+    <app-encabezado></app-encabezado>
+    <app-navbar></app-navbar>
+    <!-- OPCIONES DE COMUNIDAD -->
+
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs justify-content-center">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>GRUPOS</a>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>DISCUCIONES</a>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>NOTICIAS</a>
+      </li>
+      <li [ngbNavItem]="4">
+        <a ngbNavLink>TODO</a>
+      </li>
+    </ul>
+
+    <div *ngIf="activeId==1">
+      <section id = "comSection2">
+        <div class="container align-items-center" >
+            <div id="com" class="container">
+                <div class="row gy-3">
+                  <li *ngFor="let item of grupo">
+                    <div class="borde" >
+                      <h1> <a href="#">{{item.nombre}} </a></h1>
+                      <div class="custom container">
+                        <p class="text-center">{{item.detalle}}</p>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+        </div>
+      </section>
+    </div>
+
+    <div *ngIf="activeId==2">
+      <section id = "comSection2">
+        <div class="container align-items-center" >
+            <div id="com" class="container">
+                <div class="row gy-3">
+                  <li *ngFor="let item of discusion">
+                    <div class="borde" >
+                      <div class="custom container">
+                        <p class="text-center"> <a href="">{{item.tema}}</a></p>
+                      </div>
+                      <h1>Total de respuestas: {{item.respuestas}}</h1>
+                    </div>
+                  </li>
+                </div>
+              </div>
+        </div>
+      </section>
+    </div>
+
+    <div *ngIf="activeId==3">
+      <section id = "comSection2">
+        <div class="container align-items-center" >
+            <div id="com" class="container">
+                <div class="row gy-3">
+                  <li *ngFor="let item of noticia">
+                    <div class="borde" >
+                      <h1> <a href="#">{{item.titulo}} </a></h1>
+                      <div class="custom container">
+                        <p class="text-center">{{item.resumen}}</p>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+        </div>
+      </section>
+    </div>
+
+    <div *ngIf="activeId==4">
+      <section id = "comSection2">
+        <div class="container align-items-center" >
+            <div id="com" class="container">
+                <div class="row gy-3">
+                  <li *ngFor="let item of todo">
+                    <div class="borde" >
+                      <h1> <a href="#">{{item.seccion}} </a></h1>
+                      <div class="custom container">
+                        <p class="text-center">{{item.detalle}}</p>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+              </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+        <p>&copy; Derechos reservados LGM</p>
+        <ul class="pie" align="right">
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="">Whatsapp</a></li>
+        </ul>
+    </footer>
+</body>
