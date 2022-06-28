@@ -21,7 +21,7 @@ export class RegistroComponent implements OnInit {
     private rutPattern: any = /^(\d{1,2}\.\d{3}\.\d{3}-)([a-zA-Z]{1}$|\d{1}$)/; // Revisar si funciona esto
 
     formularioRegistro:FormGroup;
-    constructor(private router: Router, public Form:FormBuilder, public dialog: MatDialog) {
+    constructor(private router: Router, private Form:FormBuilder, public dialog: MatDialog) {
         this.formularioRegistro = this.Form.group({
             nombre:['',[
                 Validators.required,
@@ -47,6 +47,11 @@ export class RegistroComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+        })
         this.usuarioRegistrado = false;
     }
 
@@ -63,6 +68,7 @@ export class RegistroComponent implements OnInit {
 
     retroceder() {
         this.router.navigate(['/iniciar-sesion']);
+        return; // ESTO NO SE SI ESTARA CORRECTO
     }
 
     openDialog() {

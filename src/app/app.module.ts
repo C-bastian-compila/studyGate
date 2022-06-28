@@ -11,6 +11,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {  MatInputModule  } from '@angular/material/input';
+import {HttpClientModule} from '@angular/common/http';
 
 //Import sin usar, se pueden usar a futuro
 // import {MatIconModule} from '@angular/material/icon';
@@ -26,6 +27,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { SoporteComponent } from './componentes/soporte/soporte.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { SoporteComponent } from './componentes/soporte/soporte.component';
     InicioComponent,
     NavbarComponent,
     RegistroComponent,
-    SoporteComponent
+    SoporteComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,9 @@ import { SoporteComponent } from './componentes/soporte/soporte.component';
     MatDialogModule,
 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

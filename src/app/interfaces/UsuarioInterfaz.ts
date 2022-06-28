@@ -1,9 +1,13 @@
+
+// ESTO NO SE USA Y SERA BORRADO
+
+
 export interface usuarioInterfaz {
     nombre:string;
     rut:string;
     correo:string;
     clave:string;
-    imagenUrl:string;
+    imagen:string;
     tags:string;
 }
 

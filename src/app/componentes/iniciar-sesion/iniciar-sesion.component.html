@@ -16,7 +16,9 @@
                         <mat-label>Correo Electrónico</mat-label>
                         <input matInput formControlName="email">
                         <!-- Validacion -->
-                        <mat-hint *ngIf="formularioIniciarSesion.controls['email'].hasError('required')">Este campo es obligatorio</mat-hint>
+                        <mat-error *ngIf="formularioIniciarSesion.controls['email'].invalid && (formularioIniciarSesion.controls['email'].dirty || formularioIniciarSesion.controls['email'].touched)">
+                            <mat-hint *ngIf="formularioIniciarSesion.controls['email'].hasError('required')">Ingrese un correo valido</mat-hint>
+                        </mat-error>
                     </mat-form-field>
 
                     <!-- INPUT CLAVE -->
@@ -26,20 +28,22 @@
                         <mat-label>Clave</mat-label>
                         <input type="password" matInput formControlName="clave" >
                         <!-- Validacion -->
-                        <mat-hint *ngIf="formularioIniciarSesion.controls['clave'].hasError('required')">Este campo es obligatorio</mat-hint>
+                        <mat-error *ngIf="formularioIniciarSesion.controls['clave'].invalid && (formularioIniciarSesion.controls['clave'].dirty || formularioIniciarSesion.controls['clave'].touched)">
+                            <mat-hint *ngIf="formularioIniciarSesion.controls['clave'].hasError('required')">Ingrese una clave valida</mat-hint>
+                        </mat-error>
                     </mat-form-field>
 
                     <!-- CASILLA RECUERDAME -->
 
                     <div class="checkbox mb-3">
                         <label id="idRecuerdame">
-                            <input type="checkbox" value="remember-me"> Mantener sesión iniciada
+                            <input type="checkbox" formControlName="recuerdame"> Mantener sesión iniciada
                         </label>
                     </div>
 
                     <!-- BOTON ENVIAR FORMULARIO-->
 
-                    <button id="botonRegistro" bmat-raised-button [disabled]="!formularioIniciarSesion.valid" color="primary" type="submit">Ingresar</button>
+                    <button id="botonIngresar" bmat-raised-button [disabled]="!formularioIniciarSesion.valid" color="primary" type="submit">Ingresar</button>
     
                     <p id="extraOptions" class="mt-3 mb-3">
                         <a href = "https://es.wikihow.com/recordar-una-contrase%C3%B1a-olvidada">¿Olvidaste tu contraseña?</a><br/>

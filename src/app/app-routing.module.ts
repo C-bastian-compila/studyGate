@@ -10,6 +10,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { SoporteComponent } from './componentes/soporte/soporte.component';
 import { InicioComponent } from './componentes/inicio/inicio.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 const routes: Routes = [
     { path: '', component: IndiceComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
     { path: 'navbar', component: NavbarComponent },
     { path: 'registro', component: RegistroComponent },
     { path: 'soporte', component: SoporteComponent },
-    { path: 'inicio', component: InicioComponent }
+    { path: 'inicio', component: InicioComponent },
+    { path: 'perfil', component: PerfilComponent }
 ];
 
 @NgModule({
