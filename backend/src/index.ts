@@ -17,6 +17,7 @@ var usuarioControlador = require('./controllers/usuarios');
 // Este es el router de express
 const router = express.Router();
 router.route('/login/:correo/:clave').get(usuarioControlador.autenticar);
+// router.route('/register/:correo/:clave').get(usuarioControlador.autenticar);
 app.use('/api',router);
 
 // Connection to DB

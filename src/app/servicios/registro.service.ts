@@ -8,18 +8,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class IniciarSesionService {
+export class RegistroService {
 
-    constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
-    validarLogin(email:string, clave:string):Observable<any> {
+    guardarFormularioRegistro(email:string, clave:string):Observable<any> {
         const params = new HttpParams();
         params.set("email",email);
         params.set("clave", clave);
         return this.http.get(`${environment.hostname}:${environment.port}/api/login/${email}/${clave}`);
     }
-
-    // Token():Observable<any>{
-    //     return this.http.get(`${environment.hostname}":"${environment.port}/token`);
-    // }
 }
