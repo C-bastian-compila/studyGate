@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken');
 const SECRET_KEY = 'secretkey123456';
 
 exports.crear = (req:any, res:any, next:any) => {
-    console.log("XXXXX")
     const nuevoUsuario = {
       nombre: req.body.nombre,
       rut: req.body.rut,
@@ -16,7 +15,6 @@ exports.crear = (req:any, res:any, next:any) => {
       tags: req.body.tags,
       imagen: req.body.imagen
     }
-  
     Usuario.create(nuevoUsuario, (err:any, usuario:any) => {
         if (err && err.code === 11000) return res.status(409).send('El email ya esta registrado');
         if (err) return res.status(500).send('Server error');
@@ -34,14 +32,12 @@ exports.crear = (req:any, res:any, next:any) => {
 }
 
 exports.autenticar = (req:any, res:any, next:any) => {
-    console.log("XXXXX")
     //Obtengo los campos desde la consulta
     const credencialesRecibidas = {
         email: req.body.email,
         clave: req.body.clave
     }
-
-    //
+    console.log(credencialesRecibidas);
     Usuario.findOne({ email: credencialesRecibidas.email }, (err:any, usuario:any) => {
         if (err) return res.status(500).send('Server error!');
         if (!usuario) {
@@ -49,11 +45,11 @@ exports.autenticar = (req:any, res:any, next:any) => {
             res.status(409).send({ message: 'Ups, algo salio mal...' });
         } 
         else {
+            
             const claveResultante = bcrypt.compareSync(credencialesRecibidas.clave, usuario.clave);
             if (claveResultante) {
                 const expiresIn = 24 * 60 * 60;
                 const accessToken = jwt.sign({ id: usuario.id }, SECRET_KEY, { expiresIn: expiresIn });
-            
                 //Formato de datos que se enviaran de vuelta
                 const infoUsuario = {
                     nombre: usuario.nombre,
