@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet');
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
 //ANGULAR ESTILO
 
@@ -18,9 +18,9 @@
 
 //FIN ANGULAR ESTILO
 
-body{
-    margin: 0px;
-}
+// body{
+//     margin: 0px;
+// }
 
 $vColorBackground: #f5f5f5;
 $vColorMain1: #3D99CE;
@@ -46,6 +46,7 @@ footer{
     position: absolute;
     width: 90%;
     padding-bottom: 0.2%;
+    background-color: $vColorBackground;
 
     p{
         position: absolute;
@@ -62,9 +63,9 @@ footer{
         // flex-direction: row;
         padding-left: 0.3%;
     }
+    background-color: $vColorBackground;
 }
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    background-color: $vColorBackground;
+}

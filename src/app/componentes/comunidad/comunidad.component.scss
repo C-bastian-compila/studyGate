@@ -1,11 +1,5 @@
 @import "../../../styles.scss";
 
-#comSection1 {
-    padding: 1%;
-    padding-left: 0px;
-    background-color: #91d3ff;
-}
-
 .navbar-dark {
     .navbar-custom {
         .nav-link{
@@ -15,10 +9,9 @@
 }
 
 #comSection2 {
-    background-color: aliceblue;
 
     .row {
-        padding-bottom: 2%;
+
         font-size: large;
         a{
             text-decoration: none;

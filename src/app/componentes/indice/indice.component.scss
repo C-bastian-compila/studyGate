@@ -1,127 +1,126 @@
-header {
-    img{
-        padding-top: 60px;
-        padding-bottom: 60px;
-        display: block;
+@import "../../../styles.scss";
 
-        margin-left: auto;
-        margin-right: 10%;
-
-        width: 30%;
-    }  
-}
-
-.fondo{
-    background-image: url('../../../assets/imagenes/fondo1.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-}
-
-.blur{
-    backdrop-filter: blur(0px);
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.219);
-}
-
-.texto{
-    text-align: left;
-    position: absolute;
-    left : 5%;
-    top: 30%;
-    /* top: 30%; */
-    /* width: 70%; */
-    font-size: 80px;
-    color: rgb(255, 255, 255);
-    text-shadow: 4px 4px 15px black;
-
-    h2{
-        font-size: 26px;
-        padding-top: 5%;
-        color: rgb(255, 255, 255);
-    
-        padding-left: 0%;
-        padding-right: 40%;
+@mixin media-up($breakpoint){
+    @media  screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
     }
 }
 
-#seccion1 {
+.encabezado{
+    padding-top: 5%;
+
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        padding-top: 2%;
+        font-size: 2rem;
+    }
+
+    .texto{
+        padding-top: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+        color: white;
+        text-shadow: 5px 2px 6px rgba(0, 0, 0, 0.644);
+    }
+
+    img{
+        width: 35rem;
+
+        @include media-up(xs){
+            padding-left: 50%;
+            padding-right: 50%;
+        }
+        @include media-up(lg){
+            padding-right: 5%;
+            padding-bottom: 5%;
+            padding-left: 5%;
+        }
+    }
+
+    background-image: url('../../../assets/imagenes/fondo1.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.textoCentro{
     background-color: rgb(159, 103, 156);
     padding-top: 5%;
     padding-bottom: 5%;
 
-    #parrafo1{
-        font-size: 45px;
-        color: black;
-    }
-}
-
-
-.fondo2 {
-    background-image: url('../../../assets/imagenes/cage.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-}
-
-.blur2 {
-    backdrop-filter: blur(0px);
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.219);
-}
-
-.bloqueCont{
-    display: block;
-}
-
-
-#contacto{
-    background-color: rgb(0, 0, 0);
-
-    padding-top: 5%;
-    padding-bottom: 5%;
-
-    padding-left: 5%;
-    
-    /* position: relative; */
-    text-align: left;
-    color: white;
-
-    font-size: 30px;
-
-    h2{
-        padding-top: 2%;
-        font-size: 26px;
-    }
-
-    ul{
-        li{
-            display: block;
-
-            margin-left: auto;
-            margin-right: 10%;
-        }
-    }
-}
-
-.boton{
-    background-color: rgb(255, 255, 255);
+    font-size: 3rem;
     color: black;
-    padding: 5px 5px;
-    
-    font-size: 50px;
 
-    text-decoration: none;
+    text-align: center;
 }
 
-#botonweb {
+.botonWeb{
+
     h1{
         text-align: center;
         padding-top: 5%;
         padding-bottom: 5%;
     }
+
+    .boton{
+        background-color: rgb(255, 255, 255);
+        color: black;
+        padding: 5px 5px;
+        
+        font-size: 50px;
+
+        text-decoration: none;
+    }
+
+    background-image: url('../../../assets/imagenes/cage.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
-.iconos{
-    text-decoration: none;
+.contacto{
+    background-color: rgb(0, 0, 0);
+
+    padding: 5%;
+    
+    color: white;
+
+    font-size: 3rem;
+
+    h2{
+        padding-top: 6%;
+        font-size: 2rem;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    .botones{
+        @include media-up(md){
+            font-size: 8rem;
+            padding-left: 2%;
+        }
+        @include media-up(xl){
+            font-size: 8rem;
+            padding-left: 25%;
+        }
+        @include media-up(xxl){
+            font-size: 8rem;
+            padding-left: 35%;
+        }
+    }
+
+    .iconos{
+        padding: 0.5%;
+        width: 100rem;
+        height: 100rem;
+        color: rgb(173, 173, 173);
+    }
+
+    .iconos:hover{
+        color: white;
+    }
 }

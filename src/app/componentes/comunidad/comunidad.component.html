@@ -4,18 +4,18 @@
     <app-navbar></app-navbar>
     <!-- OPCIONES DE COMUNIDAD -->
 
-    <ul ngbNav [(activeId)]="activeId" class="nav-tabs justify-content-center">
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs justify-content-center navegadora">
       <li [ngbNavItem]="1">
-        <a ngbNavLink>GRUPOS</a>
+        <a ngbNavLink><i class="fa-solid fa-users-line"></i> GRUPOS</a>
       </li>
       <li [ngbNavItem]="2">
-        <a ngbNavLink>DISCUCIONES</a>
+        <a ngbNavLink><i class="fa-solid fa-comments"></i> DISCUSIONES</a>
       </li>
       <li [ngbNavItem]="3">
-        <a ngbNavLink>NOTICIAS</a>
+        <a ngbNavLink><i class="fa-solid fa-newspaper"></i> NOTICIAS</a>
       </li>
       <li [ngbNavItem]="4">
-        <a ngbNavLink>TODO</a>
+        <a ngbNavLink><i class="fa-solid fa-border-all"></i> TODO</a>
       </li>
     </ul>
 
@@ -95,12 +95,5 @@
       </section>
     </div>
 
-    <footer>
-        <p>&copy; Derechos reservados LGM</p>
-        <ul class="pie" align="right">
-            <li><a href="https://twitter.com/">Twitter</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-            <li><a href="">Whatsapp</a></li>
-        </ul>
-    </footer>
+    <app-pie-pagina></app-pie-pagina>
 </body>

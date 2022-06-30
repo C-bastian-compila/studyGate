@@ -1,23 +1,34 @@
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser') // Para formatos
-const cors = require('cors') // Intercambio de datos entre frontend y backend
-require('dotenv').config(); //variables de entorno dotenv
 const mongoose = require('mongoose'); // base de datos
 
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json());
+const express = require('express')
+const app = express()
 
+require('dotenv').config(); //variables de entorno dotenv
+
+//Se usa para que el servidor entienda que se le va entregar un JSON (creoxd)
+const bodyParser = require('body-parser');
+const bodyParserJSON = bodyParser.json();
+const bodyParserURLEncoded = bodyParser.urlencoded({ extended: true });
+
+app.use(bodyParserJSON);
+app.use(bodyParserURLEncoded);
+
+//Forma corta de escribir lo de arribar pero menos clara para lgm.sebastian
+// const bodyParser = require('body-parser')
+// app.use(bodyParser.urlencoded({extended : true}));
+// app.use(bodyParser.json());
+
+const cors = require('cors') // Intercambio de datos entre frontend y backend
 app.use(cors());
 
 // Importar modelos y controladores
-var usuarioModelo = require('./models/usuarios')(app, mongoose); 
+var usuarioModelo = require('./models/usuarios');
 var usuarioControlador = require('./controllers/usuarios');
 
 // Este es el router de express
 const router = express.Router();
-router.route('/login/:correo/:clave').get(usuarioControlador.autenticar);
-// router.route('/register/:correo/:clave').get(usuarioControlador.autenticar);
+router.route('/login').get(usuarioControlador.autenticar);
+router.route('/register').get(usuarioControlador.crear);
 app.use('/api',router);
 
 // Connection to DB
@@ -28,6 +39,14 @@ mongoose.connect(process.env.DATABASE,{
     if(err) throw err;
     console.log('Conectado a MongoDB')
 });
+
+// Pedida de conexion con la base de datos
+// process.on('SIGINT', () => {
+//     mongoose.connection.close(() => {
+//         console.log(`Mongo is disconnected`);
+//         process.exit(0)
+//     });
+// });
 
 const config={
     server:process.env.SERVER,

@@ -11,6 +11,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {  MatInputModule  } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 import {HttpClientModule} from '@angular/common/http';
 
 //Import sin usar, se pueden usar a futuro
@@ -28,6 +30,8 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { SoporteComponent } from './componentes/soporte/soporte.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { CrearForoComponent } from './componentes/crear-foro/crear-foro.component';
+import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 
 
 @NgModule({
@@ -42,7 +46,9 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     NavbarComponent,
     RegistroComponent,
     SoporteComponent,
-    PerfilComponent
+    PerfilComponent,
+    CrearForoComponent,
+    PiePaginaComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +62,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    MatSelectModule,
 
     FormsModule,
     ReactiveFormsModule,

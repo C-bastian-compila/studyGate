@@ -1,21 +1,20 @@
 @import "../../../styles.scss";
 
-#foroSection1 {
-    padding: 1%;
-    padding-left: 0px;
-    background-color: #91d3ff;
-}
-
-.navbar-dark {
-    .navbar-custom {
-        .nav-link{
-            color: rgb(0, 0, 0) ;
-        }
-    }
-}
-
 .nav-tabs{
     padding-top: 0.5%;
+}
+
+.recientes{
+    border-right: solid rgba(255, 255, 255, 0.384);
+    border-width: 2px;
+}
+
+.barraCabezal{
+    color: white;
+}
+
+body{
+    background-color: $vColorBackground;
 }
 
 /* ----------------------------------------- */
@@ -100,4 +99,4 @@
         }
         
     }
-}
+} 

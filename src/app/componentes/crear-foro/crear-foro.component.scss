@@ -1,0 +1,135 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-blue,500);
+$accent: mat-palette($mat-orange,200);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.caja{
+    box-shadow: 5px 3px 6px rgba(0, 0, 0, 0.356);
+    border-radius: 20px;
+}
+
+.crearForoBloque{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.botonAsignatura{
+    padding-bottom: 1%;
+}
+
+.botonSeleccionar{
+    background: #3D99CE;
+    color: white;
+    border: none;
+}
+
+.botonSeleccionar:focus{
+    box-shadow: none;
+    background: #0d6efd;
+}
+
+.botonSeleccionar:active{
+    background: #0d6efd;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #3D99CE
+}
+
+.profile-button {
+    background: #3D99CE;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #3D99CE
+}
+
+.profile-button:focus {
+    background: #3D99CE;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #0d6efd;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #3D99CE;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px;
+}
+
+.labelsA{
+    font-size: 11px;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+// #hola .mat-form-field {
+//     .mat-input-element {
+//         color: rgb(0, 128, 255);
+//     }
+//     .mat-form-field-label {
+//         color: grey;
+//     }
+//     .mat-form-field-underline {
+//         background-color: #3D99CE;
+//     }
+//     .mat-form-field-ripple {
+//         background-color: #3D99CE;
+//     }
+//     .mat-form-field-required-marker {
+//         color: rgb(41, 0, 136);
+//     }
+//     .mat-form-field-select{
+//         color: #504dff;
+//     }
+// }
+
+// #hola .mat-form-field.mat-focused {
+//     .mat-form-field-label {
+//         color: red;
+//     }
+//     .mat-form-field-ripple {
+//         background-color: #0d6efd;
+//     }
+//     .mat-form-field-required-marker {
+//         color: #ffffff;
+//     }
+//     .mat-input-element {
+//         color: #ffed4d;
+//     }
+// }
+
+// #hola .mat-form-field.mat-focused {
+//     .mat-input-element {
+//         color: red;
+//     }
+//     .mat-form-field-label {
+//         color: red;
+//     }
+//     .mat-form-field-underline {
+//         background-color: red;
+//     }
+//     .mat-form-field-ripple {
+//         background-color: #3D99CE;
+//     }
+//     .mat-form-field-required-marker {
+//         color: red;
+//     }
+//     .mat-form-field-select{
+//         color: red;
+//     }
+// }

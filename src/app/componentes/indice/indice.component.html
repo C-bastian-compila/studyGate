@@ -1,69 +1,56 @@
 <body>
-    <header>
-        <div class="fondo">
-            <div class="blur">
-                <div class="texto">
-                    <h1>¿Buscas aprender?</h1>
-                    <h2>Study gate es un sitio web creado con el propósito de facilitar el aprendizaje a través del flujo 
-                        de preguntas y respuestas por estudiantes o profesores.</h2>
-                </div>
-                <img src="../../assets/imagenes/1.png">
+    <div class="clearfix">
+        <div class="row encabezado">
+            <div class="col texto">
+                <h1>¿Buscas aprender?</h1>
+                <h2>Study gate es un sitio web creado con el propósito de facilitar el aprendizaje a través del flujo 
+                    de preguntas y respuestas por estudiantes o profesores.</h2>
             </div>
+            <img src="../../assets/imagenes/1.png" class="col-md-6 float-md-end mb-3 ms-md-3">
         </div>
-        
-        <!--<h1>STUDY GATE</h1>-->
-    </header>
-    
-    
-    <section id="seccion1">
-        <p align = "center" id="parrafo1">
-            ESTA PAGINA BUSCA DAR APRENDIZAJE A TODO TIPO DE PERSONA
-        </p>
-    </section>
-    
-    <section id="botonweb">
-        <div class="fondo2">
-            <div class="blur2">
-                <h1>
-                    <a [routerLink]="['/inicio']"  class="boton">Ir a la web</a>
-                </h1>
-            </div>
+
+        <div class="row textoCentro">
+            <p>
+                ESTA PAGINA BUSCA DAR APRENDIZAJE A TODO TIPO DE PERSONA
+            </p>
         </div>
-    </section>
-    
-    <section id="contacto">
-    
-        <div class="bloqueCont">
+
+        <div class="row botonWeb">
             <h1>
-                INFORMACION DE CONTACTO
+                <a [routerLink]="['/inicio']"  class="boton">Ir a la web</a>
             </h1>
-            <h2>
-                NUMERO:<BR>
-                CORREO:<BR>
-                DIRECCION:<BR>
-            </h2>
         </div>
-    
-        <ul>
-            <li>
-                <a href="https://twitter.com/" class="iconos" target="_blank">
-                    <input type="image" src="../../assets/imagenes/twitter.png" 
-                    style="border: 0;" height="100" width="100"/>
-                </a>
-    
-                <a href="" class="iconos">
-                    <input type="image" src="../../assets/imagenes/whatsapp.png"
-                    style="border: 0;" height="100" width="100"/>
-                </a>
-    
-                <a href="https://www.instagram.com/" class="iconos" target="_blank">
-                    <input type="image" src="../../assets/imagenes/instagram.png"
-                    style="border: 0;" height="100" width="100"/>
-                </a>
-            </li>
-        </ul>   
-    
-    </section>
-    
-    <script src="" async defer></script>
+
+        <div class="row contacto">
+            <div class="col">
+                <h1>
+                    INFORMACION DE CONTACTO
+                </h1>
+                <h2>
+                    NUMERO:<BR>
+                    CORREO:<BR>
+                    DIRECCION:<BR>
+                </h2>
+            </div>
+            
+            <div class="col botones">
+                <ul>
+                    <li>
+                        <a href="https://twitter.com/" class="iconos">
+                            <i class="fa-brands fa-twitter-square"></i>
+                        </a>
+            
+                        <a href="" class="iconos">
+                            <i class="fa-brands fa-whatsapp-square"></i>
+                        </a>
+            
+                        <a href="https://www.instagram.com/" class="iconos">
+                            <i class="fa-brands fa-instagram-square"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+               
+        </div>
+    </div>
 </body>

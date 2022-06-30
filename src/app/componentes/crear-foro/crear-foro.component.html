@@ -1,0 +1,61 @@
+<body>
+    <app-encabezado></app-encabezado>
+    <app-navbar></app-navbar>
+
+    <div class="crearForoBloque">
+        <div class="container bg-white caja">
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right justify-content-md-center">Crear foro</h4>
+                        </div>
+                        <div class="row" id="hola">
+                            <div class="col-md-12">
+                                <label class="labels">Titulo</label>
+                                <input type="text" class="form-control" placeholder="Titulo" value="">
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Contenido</label>
+                                <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                            </div>
+
+                            <!-- <td class="overflow-hidden botonAsignatura">
+
+                                <label class="labels">Asignatura</label>
+                                <div ngbDropdown container="body">
+                                  <button type="button" class="btn btn-outline-primary botonSeleccionar" ngbDropdownToggle>Seleccione</button>
+                                  <div ngbDropdownMenu>
+                                    <button ngbDropdownItem>Matematica</button>
+                                    <button ngbDropdownItem>Literatura</button>
+                                    <button ngbDropdownItem>Quimica</button>
+                                    <button ngbDropdownItem>Historia</button>
+                                    <button ngbDropdownItem>Biologia</button>
+                                    <button ngbDropdownItem>Ingles</button>
+                                    <button ngbDropdownItem>Algebra</button>
+                                    <button ngbDropdownItem>Otro</button>
+                                  </div>
+                                </div>
+                                
+                            </td> -->
+
+                            <label class="labelsA">Asignatura</label>
+                            <mat-form-field appearance="fill">
+                                <mat-label>Seleccione</mat-label>
+                                <mat-select>
+                                  <mat-option *ngFor="let asignaturasCrearForo of asignaturasCrearForo" [value]="asignaturasCrearForo.valor">
+                                    {{asignaturasCrearForo.asignatura}}
+                                  </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Publicar</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-pie-pagina></app-pie-pagina>
+</body>

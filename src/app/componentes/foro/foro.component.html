@@ -1,48 +1,49 @@
 <body>
     <app-encabezado></app-encabezado>
     <app-navbar></app-navbar>
-
+  
     <!-- Categorias -->
     <ul ngbNav [(activeId)]="activeId" class="nav-tabs justify-content-center">
       <li [ngbNavItem]="1">
-        <a ngbNavLink>MATEMÁTICAS</a>
+        <a ngbNavLink><i class="fa-solid fa-calculator"></i> MATEMÁTICAS</a>
       </li>
       <li [ngbNavItem]="2">
-        <a ngbNavLink>LITERATURA</a>
+        <a ngbNavLink><i class="fa-solid fa-book-open"></i> LITERATURA</a>
       </li>
       <li [ngbNavItem]="3">
-        <a ngbNavLink>QUÍMICA</a>
+        <a ngbNavLink><i class="fa-solid fa-atom"></i> QUÍMICA</a>
       </li>
       <li [ngbNavItem]="4">
-        <a ngbNavLink>HISTORIA</a>
+        <a ngbNavLink><i class="fa-solid fa-globe"></i> HISTORIA</a>
       </li>
       <li [ngbNavItem]="5">
-        <a ngbNavLink>BIOLOGÍA</a>
+        <a ngbNavLink><i class="fa-solid fa-dna"></i> BIOLOGÍA</a>
       </li>
       <li [ngbNavItem]="6">
-        <a ngbNavLink>INGLES</a>
+        <a ngbNavLink><i class="fa-solid fa-book-atlas"></i> INGLES</a>
       </li>
       <li [ngbNavItem]="7">
-        <a ngbNavLink>ALGEBRA</a>
+        <a ngbNavLink><i class="fa-solid fa-divide"></i> ALGEBRA</a>
       </li>
       <li [ngbNavItem]="8">
-        <a ngbNavLink>OTROS</a>
+        <a ngbNavLink><i class="fa-solid fa-shuffle"></i> OTROS</a>
       </li>
     </ul>
-
+  
     <section id = "foroSection2">
-
-        <div class="container align-items-center  " >
-
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4276e7">
+  
+        <div class="container align-items-center">
+  
+            <nav class="navbar navbar-expand-lg navbar-dark barraCabezal" style="background-color: #4276e7">
                 <div class="container-fluid">
-
+  
                     <div class="navbar-nav mx-auto">
                         <a class="nav-link" aria-current="page" [routerLink]="['/foro']">Mas Populares</a>
                         <a class="nav-link" [routerLink]="['/foro']">Mejor Votados</a>
-                        <a class="nav-link" [routerLink]="['/foro']">Recientes</a>
+                        <a class="nav-link recientes" [routerLink]="['/foro']">Recientes</a>
+                        <a class="nav-link" [routerLink]="['/crear-foro']">Generar consulta</a>
                     </div>
-
+  
                 </div>
             </nav>
     
@@ -58,7 +59,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==2">
               <li *ngFor="let item of literatura">
                 <div id="foros" class="container">
@@ -71,7 +72,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==3">
               <li *ngFor="let item of quimica">
                 <div id="foros" class="container">
@@ -84,7 +85,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==4">
               <li *ngFor="let item of historia">
                 <div id="foros" class="container">
@@ -97,7 +98,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==5">
               <li *ngFor="let item of biologia">
                 <div id="foros" class="container">
@@ -110,7 +111,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==6">
               <li *ngFor="let item of ingles">
                 <div id="foros" class="container">
@@ -123,7 +124,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==7">
               <li *ngFor="let item of algebra">
                 <div id="foros" class="container">
@@ -136,7 +137,7 @@
                 </div>
               </li>
             </div>
-
+  
             <div *ngIf="activeId==8">
               <li *ngFor="let item of otros">
                 <div id="foros" class="container">
@@ -149,17 +150,10 @@
                 </div>
               </li>
             </div>
-
+  
         </div>
     </section>
-
-    <footer>
-        <p>&copy; Derechos reservados LGM</p>
-        <ul class="pie" align="right">
-            <li><a href="https://twitter.com/">Twitter</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-            <li><a href="">Whatsapp</a></li>
-        </ul>
-    </footer>
-
-</body>
+  
+    <app-pie-pagina></app-pie-pagina>
+  
+  </body>

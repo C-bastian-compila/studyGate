@@ -1,15 +1,12 @@
 @import "../../../styles.scss";
 
 #soporteSeccion{
-    background-color: rgb(255, 255, 255);
-
     .navbar{
         a{
             font-size: larger;
         }
     } 
 }
-
 
 @mixin media-up($breakpoint){
     @media  screen and (min-width: map-get($breakpoints, $breakpoint)) {

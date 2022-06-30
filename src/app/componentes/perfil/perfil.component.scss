@@ -1,0 +1,40 @@
+@import "../../../styles.scss";
+
+.bloque{
+    padding-top: 5%;
+}
+
+.bloquePerfil{
+    box-shadow: 5px 3px 6px rgba(0, 0, 0, 0.356);
+    border-radius: 20px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #3D99CE
+}
+
+.botonPerfil {
+    background: #3D99CE;
+    box-shadow: none;
+    border: none
+    
+}
+
+.botonPerfil:hover {
+    background: #3D99CE
+}
+
+.botonPerfil:focus {
+    background: #3D99CE;
+    box-shadow: none
+}
+
+.botonPerfil:active {
+    background: #3D99CE;
+    box-shadow: none
+}
+
+.labels {
+    font-size: 11px
+}
