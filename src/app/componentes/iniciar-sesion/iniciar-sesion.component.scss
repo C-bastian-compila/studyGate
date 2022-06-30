@@ -20,11 +20,10 @@ main {
     padding-bottom: 200px;
 }
 
-#titulo {
+.titulo {
     color: $vColorBackground;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    // lign-algn: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .panel{
@@ -34,14 +33,8 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: center;
-
-
-    width: 100%;
-    max-width: 330px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 2%;
+    padding-right: 2%;
     margin: auto;
     background-color: rgba(61, 153, 206, 0.87);
     border-radius: 25px;

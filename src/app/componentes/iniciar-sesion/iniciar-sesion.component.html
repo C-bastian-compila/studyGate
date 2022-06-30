@@ -7,31 +7,36 @@
             <div class="panel">
                 <form [formGroup]="formularioIniciarSesion" (ngSubmit)="onSubmit()" novalidate>
                     <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-                    <h1 id="titulo" class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+                    <h3 class="titulo">Iniciar Sesión</h3>
 
                     <!-- INPUT CORREO -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>Correo Electrónico</mat-label>
-                        <input matInput formControlName="email">
-                        <!-- Validacion -->
-                        <mat-error *ngIf="formularioIniciarSesion.controls['email'].invalid && (formularioIniciarSesion.controls['email'].dirty || formularioIniciarSesion.controls['email'].touched)">
-                            <mat-hint *ngIf="formularioIniciarSesion.controls['email'].hasError('required')">Ingrese un correo valido</mat-hint>
-                        </mat-error>
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>Correo Electrónico</mat-label>
+                            <input matInput formControlName="email">
+                            <!-- Validacion -->
+                            <mat-error *ngIf="formularioIniciarSesion.controls['email'].invalid && (formularioIniciarSesion.controls['email'].dirty || formularioIniciarSesion.controls['email'].touched)">
+                                <mat-hint *ngIf="formularioIniciarSesion.controls['email'].hasError('required')">Ingrese un correo valido</mat-hint>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    
 
                     <!-- INPUT CLAVE -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>Clave</mat-label>
-                        <input type="password" matInput formControlName="clave" >
-                        <!-- Validacion -->
-                        <mat-error *ngIf="formularioIniciarSesion.controls['clave'].invalid && (formularioIniciarSesion.controls['clave'].dirty || formularioIniciarSesion.controls['clave'].touched)">
-                            <mat-hint *ngIf="formularioIniciarSesion.controls['clave'].hasError('required')">Ingrese una clave valida</mat-hint>
-                        </mat-error>
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>Clave</mat-label>
+                            <input type="password" matInput formControlName="clave" >
+                            <!-- Validacion -->
+                            <mat-error *ngIf="formularioIniciarSesion.controls['clave'].invalid && (formularioIniciarSesion.controls['clave'].dirty || formularioIniciarSesion.controls['clave'].touched)">
+                                <mat-hint *ngIf="formularioIniciarSesion.controls['clave'].hasError('required')">Ingrese una clave valida</mat-hint>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
 
                     <!-- CASILLA RECUERDAME -->
 

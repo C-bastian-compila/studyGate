@@ -9,71 +9,81 @@
 
                 <form [formGroup]="formularioRegistro" (ngSubmit)="onSubmit()" novalidate> 
 
-                    <h1 id="titulo" class="h3 mb-3 fw-normal">Registro</h1>
+                    <h3 class="titulo">Registro</h3>
 
                     <!-- INPUT NOMBRE -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>Nombre Completo</mat-label>
-                        <input matInput formControlName="nombre">
-                        <!-- Validacion -->
-                            <mat-error *ngIf="formularioRegistro.controls['nombre'].invalid && (formularioRegistro.controls['nombre'].dirty || formularioRegistro.controls['nombre'].touched)">
-                                <mat-hint *ngIf="formularioRegistro.controls['nombre'].hasError('required')">Este campo es obligatorio</mat-hint>
-                                <mat-hint *ngIf="formularioRegistro.controls['nombre'].hasError('maxlength')">Tamaño máximo 40 caracteres.</mat-hint>  
-                            </mat-error>  
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>Nombre Completo</mat-label>
+                            <input matInput formControlName="nombre">
+                            <!-- Validacion -->
+                                <mat-error *ngIf="formularioRegistro.controls['nombre'].invalid && (formularioRegistro.controls['nombre'].dirty || formularioRegistro.controls['nombre'].touched)">
+                                    <mat-hint *ngIf="formularioRegistro.controls['nombre'].hasError('required')">Este campo es obligatorio</mat-hint>
+                                    <mat-hint *ngIf="formularioRegistro.controls['nombre'].hasError('maxlength')">Tamaño máximo 40 caracteres.</mat-hint>  
+                                </mat-error>  
+                        </mat-form-field>
+                    </div>
 
                     <!-- INPUT CORREO -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>Correo Electrónico</mat-label>
-                        <input matInput formControlName="email">
-                        <!-- Validacion -->
-                            <mat-error *ngIf="formularioRegistro.controls['email'].invalid && (formularioRegistro.controls['email'].dirty || formularioRegistro.controls['email'].touched)">
-                                <mat-hint *ngIf="formularioRegistro.controls['email'].hasError('required')">Este campo es obligatorio</mat-hint>
-                                <mat-hint *ngIf="(formularioRegistro.controls['email'].dirty || formularioRegistro.controls['email'].touched) && formularioRegistro.controls['email'].invalid && !formularioRegistro.controls['email'].hasError('required')">Ingrese un correo electrónico valido.</mat-hint>
-                            </mat-error>  
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>Correo Electrónico</mat-label>
+                            <input matInput formControlName="email">
+                            <!-- Validacion -->
+                                <mat-error *ngIf="formularioRegistro.controls['email'].invalid && (formularioRegistro.controls['email'].dirty || formularioRegistro.controls['email'].touched)">
+                                    <mat-hint *ngIf="formularioRegistro.controls['email'].hasError('required')">Este campo es obligatorio</mat-hint>
+                                    <mat-hint *ngIf="(formularioRegistro.controls['email'].dirty || formularioRegistro.controls['email'].touched) && formularioRegistro.controls['email'].invalid && !formularioRegistro.controls['email'].hasError('required')">Ingrese un correo electrónico valido.</mat-hint>
+                                </mat-error>  
+                        </mat-form-field>
+                    </div>
 
                     <!-- INPUT RUT -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>RUT</mat-label>
-                        <input matInput formControlName="rut">
-                        <!-- Validacion -->
-                        <mat-error *ngIf="formularioRegistro.controls['rut'].invalid && (formularioRegistro.controls['rut'].dirty || formularioRegistro.controls['rut'].touched)">
-                            <mat-hint *ngIf="formularioRegistro.controls['rut'].hasError('required')">Este campo es obligatorio</mat-hint>
-                            <mat-hint *ngIf="(formularioRegistro.controls['rut'].dirty || formularioRegistro.controls['rut'].touched) && formularioRegistro.controls['rut'].invalid && !formularioRegistro.controls['rut'].hasError('required')">Ingrese un RUT valido<br> Formato: 12.345.678-9</mat-hint>
-                        </mat-error>  
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>RUT</mat-label>
+                            <input matInput formControlName="rut">
+                            <!-- Validacion -->
+                            <mat-error *ngIf="formularioRegistro.controls['rut'].invalid && (formularioRegistro.controls['rut'].dirty || formularioRegistro.controls['rut'].touched)">
+                                <mat-hint *ngIf="formularioRegistro.controls['rut'].hasError('required')">Este campo es obligatorio</mat-hint>
+                                <mat-hint *ngIf="(formularioRegistro.controls['rut'].dirty || formularioRegistro.controls['rut'].touched) && formularioRegistro.controls['rut'].invalid && !formularioRegistro.controls['rut'].hasError('required')">Ingrese un RUT valido<br> Formato: 12.345.678-9</mat-hint>
+                            </mat-error>  
+                        </mat-form-field>
+                    </div>
                     
                     <!-- INPUT CLAVE -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>Clave</mat-label>
-                        <input type="password" matInput formControlName="clave" >
-                        <!-- Validacion -->
-                            <mat-error *ngIf="formularioRegistro.controls['clave'].invalid && (formularioRegistro.controls['clave'].dirty || formularioRegistro.controls['clave'].touched)">
-                                <mat-hint *ngIf="formularioRegistro.controls['clave'].hasError('required')">Este campo es obligatorio</mat-hint>
-                                <mat-hint  *ngIf="formularioRegistro.controls['clave'].hasError('maxlength') || formularioRegistro.controls['clave'].hasError('minlength')">La contraseña debe tener de 4 a 20 caracteres.</mat-hint>  
-                            </mat-error>  
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>Clave</mat-label>
+                            <input type="password" matInput formControlName="clave" >
+                            <!-- Validacion -->
+                                <mat-error *ngIf="formularioRegistro.controls['clave'].invalid && (formularioRegistro.controls['clave'].dirty || formularioRegistro.controls['clave'].touched)">
+                                    <mat-hint *ngIf="formularioRegistro.controls['clave'].hasError('required')">Este campo es obligatorio</mat-hint>
+                                    <mat-hint  *ngIf="formularioRegistro.controls['clave'].hasError('maxlength') || formularioRegistro.controls['clave'].hasError('minlength')">La contraseña debe tener de 4 a 20 caracteres.</mat-hint>  
+                                </mat-error>  
+                        </mat-form-field>
+                    </div>
 
                     <!-- INPUT REPETIR CLAVE -->
 
-                    <mat-form-field appearance="fill">
-                        <!-- input -->
-                        <mat-label>Repetir clave</mat-label>
-                        <input type="password" matInput formControlName="claveRepetida" >
-                        <!-- Validacion -->
-                            <mat-error *ngIf="formularioRegistro.controls['claveRepetida'].invalid && (formularioRegistro.controls['claveRepetida'].dirty || formularioRegistro.controls['claveRepetida'].touched)">
-                                <mat-hint *ngIf="formularioRegistro.controls['claveRepetida'].hasError('required')">Este campo es obligatorio</mat-hint>
-                            </mat-error>  
-                    </mat-form-field>
+                    <div class="container">
+                        <mat-form-field appearance="fill">
+                            <!-- input -->
+                            <mat-label>Repetir clave</mat-label>
+                            <input type="password" matInput formControlName="claveRepetida" >
+                            <!-- Validacion -->
+                                <mat-error *ngIf="formularioRegistro.controls['claveRepetida'].invalid && (formularioRegistro.controls['claveRepetida'].dirty || formularioRegistro.controls['claveRepetida'].touched)">
+                                    <mat-hint *ngIf="formularioRegistro.controls['claveRepetida'].hasError('required')">Este campo es obligatorio</mat-hint>
+                                </mat-error>  
+                        </mat-form-field>
+                    </div>
                     <br>
 
                     <!-- Boton enviar formulario -->
