@@ -6,11 +6,12 @@ interface Fotos{
 }
 
 @Component({
-  selector: 'app-perfil',
-  templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss']
+  selector: 'app-perfil-editar',
+  templateUrl: './perfil-editar.component.html',
+  styleUrls: ['./perfil-editar.component.scss']
 })
-export class PerfilComponent implements OnInit {
+
+export class PerfilEditarComponent implements OnInit {
 
   fotoSeleccionada: string = "fotoPerfil1";
 
@@ -36,9 +37,12 @@ export class PerfilComponent implements OnInit {
     {"nombre":"Sebastian Valdebenito", "correo":"sebastian.valdebenito@gmail.com", "rut":"20.542.452-3"}
   ]
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
   }
 
+  funcionGuardar(){
+    console.log("guardar");
+  }
 }
