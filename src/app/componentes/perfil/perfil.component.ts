@@ -3,13 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { Router } from '@angular/router';
-import { Sesion } from '../iniciar-sesion/Sesion';
-
-
-interface Fotos{
-  valor: string;
-  foto: string;
-}
 
 @Component({
   selector: 'app-perfil',
@@ -20,15 +13,8 @@ export class PerfilComponent implements OnInit {
     
     constructor(private servicioAutenticacion:AutenticacionService,private servicioUsuario:UsuarioService, private router: Router) {
     }
-    private infoUsuario:any;
-    fotoSeleccionada: string = "imagenPredeterminada.png";
 
-    usuarios = [
-        {"nombre":"Francisco Leiva", "correo":"francisco.leiva@gmail.com", "rut":"20.542.805-5"},
-        {"nombre":"Ignacio Morales", "correo":"ignacio.morales@gmail.com", "rut":"20.183.542-2"},
-        {"nombre":"Erik Becerra", "correo":"erik.becerra@gmail.com", "rut":"20.483.945-K"},
-        {"nombre":"Sebastian Valdebenito", "correo":"sebastian.valdebenito@gmail.com", "rut":"20.542.452-3"}
-    ]
+    fotoSeleccionada: string = "imagenPredeterminada.png";
 
     ngOnInit(): void {
         this.cargarDatosUsuario();
@@ -39,8 +25,6 @@ export class PerfilComponent implements OnInit {
         this.servicioAutenticacion.cerrarSesion();
         this.router.navigate(['/iniciar-sesion']);
     }
-
-    
 
     cargarDatosUsuario() {
         this.servicioUsuario.obtenerUsuarioActual().subscribe(datos => {

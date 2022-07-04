@@ -48,8 +48,9 @@ export class PerfilEditarComponent implements OnInit {
   }
 
   public botonEliminarCuenta(): void {
-    this.servicioAutenticacion.cerrarSesion();
-    this.router.navigate(['/inicio']);
+    this.servicioUsuario.eliminarUsuarioActual();
+    // this.servicioAutenticacion.cerrarSesion();
+    // this.router.navigate(['/iniciar-sesion']);
   }
 
   cargarDatosUsuario() {

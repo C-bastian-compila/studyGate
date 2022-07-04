@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
 
 import { Router } from '@angular/router';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms'; // FormControl QUITADO
+import { CustomValidators } from './validator';
 // import { UsuarioInterfaz } from 'src/app/models/usuario';
 
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
@@ -23,7 +23,7 @@ export class RegistroComponent implements OnInit {
     private rutPattern: any = /^(\d{1,2}\.\d{3}\.\d{3}-)([a-zA-Z]{1}$|\d{1}$)/; // Revisar si funciona esto
 
     formularioRegistro:FormGroup;
-    constructor(private router: Router, private Form:FormBuilder, public dialog: MatDialog, private servicio:AutenticacionService) {
+    constructor(private router: Router, private Form:FormBuilder, private servicio:AutenticacionService) {
         this.formularioRegistro = this.Form.group({
             nombre:['',[
                 Validators.required,
@@ -44,7 +44,8 @@ export class RegistroComponent implements OnInit {
             claveRepetida:['',[
                 Validators.required
             ]]
-            // ['', [Validators.required]],validators: this.password.bind(this)
+        // }, {
+        //     validator: [<any>CustomValidators.MatchValidator('clave', 'claveRepetida')] 
         });
     }
 
@@ -68,7 +69,8 @@ export class RegistroComponent implements OnInit {
             rut: this.formularioRegistro.get("rut")?.value,
             clave: this.formularioRegistro.get("clave")?.value,
             tags:"",
-            imagen:"imagenPredeterminada.png"
+            imagen:"imagenPredeterminada.png",
+            tipo: "normal"
         }
 
         this.servicio.registrarse(<any>infoUsuario).subscribe(res => {
@@ -79,15 +81,10 @@ export class RegistroComponent implements OnInit {
             this.formularioRegistro.controls['email'].setValue("")
         }
         
-        // this.usuarioRegistrado = true;
         // this.openDialog();
     }
 
-    openDialog() {
-        this.dialog.open(dialogoUsuarioRegistrado);
-    }
-    
-    validacion(){
+   //
         
         // // this.estado=true;
         // if()
@@ -98,9 +95,6 @@ export class RegistroComponent implements OnInit {
       
         // console.log("Los datos que se reciben son "+datos[0].nombre);
     
-    
-    
-
 
         // let UsuarioInterfaz: any=[{
         //     "nombre": value.nombre,
@@ -109,7 +103,7 @@ export class RegistroComponent implements OnInit {
         // }];
       
         // console.log("Los datos que se reciben son "+datos[0].nombre);
-    }
+   // }
 
     // validacion2(){
     //     this.estado=true;
@@ -124,16 +118,4 @@ export class RegistroComponent implements OnInit {
     
     
     //   }
-}
-
-
-// El component y export de abajo para hacer el dialogo
-
-@Component({
-    selector: 'app-dialogoUsuarioRegistrado',
-    templateUrl: 'dialogoUsuarioRegistrado.html',
-})
-
-export class dialogoUsuarioRegistrado {
-    constructor(public dialog: MatDialog) {}
 }

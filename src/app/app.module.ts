@@ -19,7 +19,6 @@ import {HttpClientModule} from '@angular/common/http';
 // import {MatIconModule} from '@angular/material/icon';
 
 import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
 import { ComunidadComponent } from './componentes/comunidad/comunidad.component';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { ForoComponent } from './componentes/foro/foro.component';
@@ -63,7 +62,6 @@ import { PerfilEditarComponent } from './componentes/perfil-editar/perfil-editar
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule,
     MatSelectModule,
 
     FormsModule,

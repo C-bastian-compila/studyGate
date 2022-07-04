@@ -13,7 +13,8 @@ exports.crear = (req:any, res:any, next:any) => {
       email: req.body.email,
       clave: bcrypt.hashSync(req.body.clave),
       tags: req.body.tags,
-      imagen: req.body.imagen
+      imagen: req.body.imagen,
+      tipo: req.body.tipo
     }
     Usuario.create(nuevoUsuario, (err:any, usuario:any) => {
         
@@ -47,7 +48,6 @@ exports.autenticar = (req:any, res:any, next:any) => {
             res.status(409).send({ message: 'Ups, algo salio mal...' });
         } 
         else {
-            
             const claveResultante = bcrypt.compareSync(credencialesRecibidas.clave, usuario.clave);
             if (claveResultante) {
                 const expiresIn = 24 * 60 * 60;
@@ -82,13 +82,9 @@ exports.obtenerUsuario = function(req:any, res:any) {
 };
 
 
-// exports.eliminarUsuario = function(req:any, res:any) {
-//     Usuario.deleteOne({email:req.params.email}, function(err:any, response:any) {
-// 		if(err) return res.send(500, err.message);
-//         console.log(response)
-//         if (!usuario) {
-//             res.status(409).send({ message: 'Ups, algo salio mal...' });
-//         }
-//         else res.status(200).json(usuario);
-// 	});
-// };
+exports.eliminarUsuario = function(req:any, res:any) {
+    Usuario.deleteOne({email:req.params.email}, function(err:any, response:any) {
+		if(err) return res.send(500, err.message);
+        else res.status(200).json(response);
+	});
+};

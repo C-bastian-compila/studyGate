@@ -8,6 +8,7 @@ export interface UsuarioInterfaz {
     email:string;
     clave:string;
     imagen:string;
+    tipo:string;
     tags:string;
 }
 

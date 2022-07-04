@@ -21,6 +21,13 @@ export class UsuarioService {
         return this.http.get(`${this.AUTH_SERVER}/api/usuario/obtener/${email}`);
     }
 
+    eliminarUsuarioActual() {
+        var email = this.emailUsuarioActual();
+        const params = new HttpParams();
+        params.set("email", email);
+        return this.http.delete(`${this.AUTH_SERVER}/api/usuario/eliminar/${email}`);
+    }
+
     private emailUsuarioActual(): string {
         // QUIZAS SEA NECESARIO VALIDAR SI HAY SESION, EN CASO DE VOLVER A USAR ESTE
         var aux:any = localStorage.getItem("sesion");
@@ -38,6 +45,12 @@ export class UsuarioService {
         var aux:any = localStorage.getItem("sesion");
         var sesion: JwtResponseInterfaz = <JwtResponseInterfaz> JSON.parse(aux);
         return sesion.infoUsuario.imagen;
+    }
+
+    public tipoUsuarioActual() {
+        var aux:any = localStorage.getItem("sesion");
+        var sesion: JwtResponseInterfaz = <JwtResponseInterfaz> JSON.parse(aux);
+        return sesion.infoUsuario.tipo;
     }
 
     public haySesion(): boolean {
