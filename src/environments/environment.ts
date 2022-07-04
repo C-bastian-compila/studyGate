@@ -6,7 +6,9 @@ export const environment = {
   production: false,
   
   hostname: 'http://127.0.0.1',
-  port:3001
+  port:3001,
+
+  AUTH_SERVER: 'http://127.0.0.1:3001'
 };
 
 /*

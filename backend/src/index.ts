@@ -27,8 +27,12 @@ var usuarioControlador = require('./controllers/usuarios');
 
 // Este es el router de express
 const router = express.Router();
-router.route('/login').get(usuarioControlador.autenticar);
+router.route('/login').post(usuarioControlador.autenticar);
 router.route('/register').post(usuarioControlador.crear);
+router.route('/usuario/obtener/:email').get(usuarioControlador.obtenerUsuario);
+// router.route('/usuario/eliminar').delete(usuarioControlador.obtenerUsuario);
+// router.route('/usuario/eliminar').put(usuarioControlador.obtenerUsuario);
+
 app.use('/api',router);
 
 // Connection to DB

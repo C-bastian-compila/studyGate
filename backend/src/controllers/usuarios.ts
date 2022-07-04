@@ -16,18 +16,19 @@ exports.crear = (req:any, res:any, next:any) => {
       imagen: req.body.imagen
     }
     Usuario.create(nuevoUsuario, (err:any, usuario:any) => {
+        
         if (err && err.code === 11000) return res.status(409).send('El email ya esta registrado');
         if (err) return res.status(500).send('Server error');
         const expiresIn = 24 * 60 * 60;
         const accessToken = jwt.sign({ id: usuario.id }, SECRET_KEY, {expiresIn: expiresIn});
-        const dataUser = {
-            name: usuario.name,
+        const infoUsuario = {
+            nombre: usuario.nombre,
             email: usuario.email,
             ssToken: accessToken,
             expiresIn: expiresIn
         }
         // response 
-        res.send({ dataUser });
+        res.send({ infoUsuario });
     });
 }
 
@@ -37,7 +38,6 @@ exports.autenticar = (req:any, res:any, next:any) => {
         email: req.body.email,
         clave: req.body.clave
     }
-    console.log(credencialesRecibidas);
     Usuario.findOne({ email: credencialesRecibidas.email }, (err:any, usuario:any) => {
         if (err) return res.status(500).send('Server error!');
         if (!usuario) {
@@ -67,9 +67,24 @@ exports.autenticar = (req:any, res:any, next:any) => {
     });
 }
 
-// exports.autenticar = function(req:any, res:any) {
-//     Usuarios.find({correo:req.params.correo,clave:req.params.clave},function(err:any,response:any) {
+exports.obtenerUsuario = function(req:any, res:any) {
+    Usuario.findOne({email:req.params.email}, function(err:any, usuario:any) {
+		if(err) return res.send(500, err.message);
+        if (!usuario) {
+            res.status(409).send({ message: 'Ups, algo salio mal...' });
+        }
+        else res.status(200).json(usuario);
+	});
+};
+
+
+// exports.eliminarUsuario = function(req:any, res:any) {
+//     Usuario.deleteOne({email:req.params.email}, function(err:any, response:any) {
 // 		if(err) return res.send(500, err.message);
-//       res.status(200).json(response);
+//         console.log(response)
+//         if (!usuario) {
+//             res.status(409).send({ message: 'Ups, algo salio mal...' });
+//         }
+//         else res.status(200).json(usuario);
 // 	});
 // };

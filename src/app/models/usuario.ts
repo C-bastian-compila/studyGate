@@ -2,10 +2,10 @@
 // ESTO NO SE USA Y SERA BORRADO
 
 
-export interface usuarioInterfaz {
+export interface UsuarioInterfaz {
     nombre:string;
     rut:string;
-    correo:string;
+    email:string;
     clave:string;
     imagen:string;
     tags:string;

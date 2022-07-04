@@ -11,35 +11,10 @@
     padding-right: 10%;
 }
 
-.form-control #nombreSimple{
-    padding: 0.1rem 0.75rem;
-}
-
-#nombreSimple{
-    font-size: 1.4rem;
-    padding-top: 2%;
-}
-
 .form-control:focus {
     box-shadow: none;
-    border-color: #ced4da;
+    border-color: #3D99CE
 }
-
-.botonCerrar{
-    background: #3D99CE;
-    box-shadow: none;
-    border: none;
-    font-size: 1.2rem;
-    width: 9rem;
-}
-
-.botones{
-    padding-top: 6%;
-}
-
-// .tags{
-//     padding-top: 2%;
-// }
 
 .botonPerfil {
     background: #3D99CE;
@@ -47,6 +22,10 @@
     border: none;
     font-size: 1.2rem;
     width: 6rem;
+}
+
+.botones{
+    padding-top: 6%;
 }
 
 .botonPerfil:hover {
@@ -66,3 +45,7 @@
 .labels {
     font-size: 11px
 }
+
+// .form-control{
+//     width: 30rem;
+// }

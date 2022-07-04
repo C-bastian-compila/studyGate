@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 
 import { Router } from '@angular/router';
-import {FormBuilder,FormGroup,FormControl,Validators} from '@angular/forms';
+import {FormBuilder,FormGroup,Validators} from '@angular/forms'; // FormControl QUITADO
 // import { UsuarioInterfaz } from 'src/app/models/usuario';
+
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
     selector: 'app-registro',
@@ -15,13 +17,13 @@ export class RegistroComponent implements OnInit {
 
     // constructor() { }
 
-    usuarioRegistrado: Boolean = false;
+    // usuarioRegistrado: Boolean = false;
 
     private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     private rutPattern: any = /^(\d{1,2}\.\d{3}\.\d{3}-)([a-zA-Z]{1}$|\d{1}$)/; // Revisar si funciona esto
 
     formularioRegistro:FormGroup;
-    constructor(private router: Router, private Form:FormBuilder, public dialog: MatDialog) {
+    constructor(private router: Router, private Form:FormBuilder, public dialog: MatDialog, private servicio:AutenticacionService) {
         this.formularioRegistro = this.Form.group({
             nombre:['',[
                 Validators.required,
@@ -52,23 +54,33 @@ export class RegistroComponent implements OnInit {
             left: 0, 
             behavior: 'smooth'
         })
-        this.usuarioRegistrado = false;
+        // this.usuarioRegistrado = false;
     }
 
-    onSubmit() {
+    onSubmit(): void {
         // if(this.formularioRegistro.invalid) {
         //     console.log("Formulario de registro invalido");
         //     return;
         // }
-        console.log("REGISTRADO CORRECTAMENTE.")
-        this.retroceder();
-        this.usuarioRegistrado = true;
-        this.openDialog();
-    }
+        var infoUsuario = {
+            nombre: this.formularioRegistro.get("nombre")?.value,
+            email: this.formularioRegistro.get("email")?.value,
+            rut: this.formularioRegistro.get("rut")?.value,
+            clave: this.formularioRegistro.get("clave")?.value,
+            tags:"",
+            imagen:"imagenPredeterminada.png"
+        }
 
-    retroceder() {
-        this.router.navigate(['/iniciar-sesion']);
-        return; // ESTO NO SE SI ESTARA CORRECTO
+        this.servicio.registrarse(<any>infoUsuario).subscribe(res => {
+            this.router.navigate(['/perfil']);
+        });
+
+        if(!this.servicio.haySesion()) { // Caso email repetido
+            this.formularioRegistro.controls['email'].setValue("")
+        }
+        
+        // this.usuarioRegistrado = true;
+        // this.openDialog();
     }
 
     openDialog() {

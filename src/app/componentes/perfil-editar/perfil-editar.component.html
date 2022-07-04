@@ -1,0 +1,47 @@
+<body>
+    <app-encabezado></app-encabezado>
+    <app-navbar></app-navbar>
+    <div class="bloque">
+        <div class="container bg-white bloquePerfil">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                        <img class="rounded-circle mt-5" width="150px" src="../../../assets/imagenes/perfil/{{fotoSeleccionada}}.jpg">
+                        <span class="font-weight-bold">Sebastian</span>
+                        <span class="text-black-50">quintillisas.mejor.anime@gmail.com</span>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Foto perfil</mat-label>
+                            <mat-select [(ngModel)]="fotoSeleccionada" name="fotoPerfil">
+                            <mat-option *ngFor="let fotoPerfil of fotosConstructor" [value]="fotoPerfil.valor">
+                                {{fotoPerfil.foto}}
+                            </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-sm d-flex justify-content-left">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right">Perfil</h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-12"><label class="labels">Nombre Completo</label><input type="text" class="form-control" value="{{usuarios[1].nombre}}"></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12"><label class="labels">Correo Electrónico</label><input type="text" class="form-control" value="{{usuarios[1].correo}}"></div>
+                            <div class="col-md-12"><label class="labels">RUT</label><input type="text" class="form-control" value="{{usuarios[1].rut}}"></div>
+                        </div>
+
+                        <div class="row justify-content-center botones">
+                            <button class="btn btn-primary botonPerfil" type="button" [routerLink]="['/perfil']" (click)="funcionGuardar()">
+                                Guardar
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-pie-pagina></app-pie-pagina>
+</body>
