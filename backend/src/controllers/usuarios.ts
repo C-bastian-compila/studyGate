@@ -81,10 +81,16 @@ exports.obtenerUsuario = function(req:any, res:any) {
 	});
 };
 
-
 exports.eliminarUsuario = function(req:any, res:any) {
     Usuario.deleteOne({email:req.params.email}, function(err:any, response:any) {
 		if(err) return res.send(500, err.message);
         else res.status(200).json(response);
+	});
+};
+
+exports.editarImagen = function(req:any, res:any) {
+    Usuario.findOneAndUpdate({email:req.params.email}, {imagen:req.body.imagen}, function(err:any, response:any) {
+		if(err) return res.send(500, err.message);
+        else res.status(200).json();
 	});
 };

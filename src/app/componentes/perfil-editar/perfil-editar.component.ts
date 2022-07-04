@@ -18,39 +18,45 @@ export class PerfilEditarComponent implements OnInit {
 
   fotoSeleccionada : string = "imagenPredeterminada.png";
 
-  fotosConstructor: Fotos[] = [
-    {valor: 'fotoPerfil1.jpg', foto: 'Foto 1'},
-    {valor: 'fotoPerfil2.jpg', foto: 'Foto 2'},
-    {valor: 'fotoPerfil3.jpg', foto: 'Foto 3'},
-    {valor: 'fotoPerfil4.jpg', foto: 'Foto 4'},
-    {valor: 'fotoPerfil5.jpg', foto: 'Foto 5'},
-    {valor: 'fotoPerfil6.jpg', foto: 'Foto 6'},
-    {valor: 'fotoPerfil7.jpg', foto: 'Foto 7'},
-    {valor: 'fotoPerfil8.jpg', foto: 'Foto 8'},
-    {valor: 'fotoPerfil9.jpg', foto: 'Foto 9'},
-    {valor: 'fotoPerfil10.jpg', foto: 'Foto 10'},
-    {valor: 'fotoPerfil11.jpg', foto: 'Foto 11'},
-    {valor: 'fotoPerfil12.jpg', foto: 'Foto 12'},
-]
+    fotosConstructor: Fotos[] = [
+        {valor: 'fotoPerfil1.jpg', foto: 'Foto 1'},
+        {valor: 'fotoPerfil2.jpg', foto: 'Foto 2'},
+        {valor: 'fotoPerfil3.jpg', foto: 'Foto 3'},
+        {valor: 'fotoPerfil4.jpg', foto: 'Foto 4'},
+        {valor: 'fotoPerfil5.jpg', foto: 'Foto 5'},
+        {valor: 'fotoPerfil6.jpg', foto: 'Foto 6'},
+        {valor: 'fotoPerfil7.jpg', foto: 'Foto 7'},
+        {valor: 'fotoPerfil8.jpg', foto: 'Foto 8'},
+        {valor: 'fotoPerfil9.jpg', foto: 'Foto 9'},
+        {valor: 'fotoPerfil10.jpg', foto: 'Foto 10'},
+        {valor: 'fotoPerfil11.jpg', foto: 'Foto 11'},
+        {valor: 'fotoPerfil12.jpg', foto: 'Foto 12'}
+    ]
 
-  usuarios=[
-    {"nombre":"Francisco Leiva", "correo":"francisco.leiva@gmail.com", "rut":"20.542.805-5"},
-    {"nombre":"Ignacio Morales", "correo":"ignacio.morales@gmail.com", "rut":"20.183.542-2"},
-    {"nombre":"Erik Becerra", "correo":"erik.becerra@gmail.com", "rut":"20.483.945-K"},
-    {"nombre":"Sebastian Valdebenito", "correo":"sebastian.valdebenito@gmail.com", "rut":"20.542.452-3"}
-  ]
+    constructor(private servicioAutenticacion:AutenticacionService,private servicioUsuario:UsuarioService, private router: Router) { }
 
-  constructor(private servicioAutenticacion:AutenticacionService,private servicioUsuario:UsuarioService, private router: Router) { }
+    ngOnInit(): void {
+        this.cargarDatosUsuario();
+        this.fotoSeleccionada = this.servicioUsuario.imagenUsuarioActual();
+    }
 
-  ngOnInit(): void {
-    this.cargarDatosUsuario();
-    this.fotoSeleccionada = this.servicioUsuario.imagenUsuarioActual();
+  public botonEliminarCuenta() {
+
+    this.servicioUsuario.eliminarUsuarioActual().subscribe(res => {
+        this.servicioAutenticacion.cerrarSesion();
+        this.router.navigate(['/iniciar-sesion']);
+    });
   }
 
-  public botonEliminarCuenta(): void {
-    this.servicioUsuario.eliminarUsuarioActual();
-    // this.servicioAutenticacion.cerrarSesion();
-    // this.router.navigate(['/iniciar-sesion']);
+  public botonGuardarCambios() {
+
+    var infoUsuario = {
+        imagen: this.fotoSeleccionada
+    }
+    
+    this.servicioUsuario.editarUsuarioActual(<any>infoUsuario,<any>this.fotoSeleccionada).subscribe(res => {
+        this.router.navigate(['/perfil']);
+    });
   }
 
   cargarDatosUsuario() {

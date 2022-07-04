@@ -31,7 +31,7 @@ router.route('/login').post(usuarioControlador.autenticar);
 router.route('/register').post(usuarioControlador.crear);
 router.route('/usuario/obtener/:email').get(usuarioControlador.obtenerUsuario);
 router.route('/usuario/eliminar/:email').delete(usuarioControlador.eliminarUsuario);
-// router.route('/usuario/eliminar').put(usuarioControlador.obtenerUsuario);
+router.route('/usuario/editarImagen/:email').put(usuarioControlador.editarImagen);
 
 app.use('/api',router);
 
