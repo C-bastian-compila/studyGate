@@ -2,11 +2,13 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------
 Para ejecutar:
+```
     - En /backend hacer npm i
     - En /backend hacer tsc --watch
     - Abrir otra consola y en /backend hacer node src/js/index.js
     - Abrir otra consola y hacer npm i
     - Ejecutar ng serve
+```
 ----------------------------------------------------------------------------------------------------------------------------------
 
 
