@@ -24,6 +24,8 @@ exports.crear = (req:any, res:any, next:any) => {
         const infoUsuario = {
             nombre: usuario.nombre,
             email: usuario.email,
+            imagen: usuario.imagen,
+            tipo: usuario.tipo,
             ssToken: accessToken,
             expiresIn: expiresIn
         }
@@ -54,7 +56,9 @@ exports.autenticar = (req:any, res:any, next:any) => {
                 const infoUsuario = {
                     nombre: usuario.nombre,
                     email: usuario.email,
-                    accessToken: accessToken,
+                    imagen: usuario.imagen,
+                    tipo: usuario.tipo,
+                    ssToken: accessToken,
                     expiresIn: expiresIn
                 }
                 res.send({ infoUsuario });

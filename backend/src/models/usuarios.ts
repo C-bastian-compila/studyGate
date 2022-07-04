@@ -28,6 +28,12 @@ const usuarioSchema = new Schema({
     },
     imagen: {
         type: String,
+        required: true,
+        trim: true
+    },
+    tipo: {
+        type: String,
+        required: true,
         trim: true
     }
 },  {

@@ -28,6 +28,18 @@ export class UsuarioService {
         return sesion.infoUsuario.email;
     }
 
+    public nombreUsuarioActual() {
+        var aux:any = localStorage.getItem("sesion");
+        var sesion: JwtResponseInterfaz = <JwtResponseInterfaz> JSON.parse(aux);
+        return sesion.infoUsuario.nombre;
+    }
+
+    public imagenUsuarioActual() {
+        var aux:any = localStorage.getItem("sesion");
+        var sesion: JwtResponseInterfaz = <JwtResponseInterfaz> JSON.parse(aux);
+        return sesion.infoUsuario.imagen;
+    }
+
     public haySesion(): boolean {
         if(localStorage.getItem("sesion") != null) return true;
         else return false;
