@@ -21,8 +21,7 @@ export class IniciarSesionComponent implements OnInit {
             ]],
             clave:['',[
                 Validators.required
-            ]],
-            recuerdame:['',]
+            ]]
         });
         // this.datos = new Sesion("","")
     }
@@ -33,7 +32,6 @@ export class IniciarSesionComponent implements OnInit {
         if(this.servicio.haySesion()) {
             this.router.navigate(['/perfil']);
         }
-        this.formularioIniciarSesion.controls['recuerdame'].setValue("magia") //casilla mantener sesion iniciada por defecto. Esto creo que funciona pero debe estar terrible malo
     }
 
     // onSubmit() {
@@ -57,9 +55,6 @@ export class IniciarSesionComponent implements OnInit {
         }
 
         this.servicio.iniciarSesion(<any>infoUsuario).subscribe(res => {
-            if(this.formularioIniciarSesion.get("recuerdame")?.value) {
-                //nada por ahora
-            }
             this.router.navigate(['/perfil']);
         });
 

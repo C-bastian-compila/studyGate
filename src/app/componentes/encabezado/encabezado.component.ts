@@ -8,23 +8,24 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class EncabezadoComponent implements OnInit {
 
+    nombreEstudiante : string = "Estudiante";
+
     constructor(private servicioUsuario:UsuarioService) {}
 
     ngOnInit(): void {
-        if(!this.servicioUsuario.haySesion()) {
-            document.getElementById("nombreUsuario")!.textContent = "Estudiante";
-        }
-        else {
-            this.cargarDatosUsuario();
-        }
-    } 
+        console.log("hola")
+        document.getElementById("nombreUsuario")!.innerHTML = this.nombreEstudiante;
+        if(this.servicioUsuario.haySesion()) this.cargarDatosUsuario();
+        else document.getElementById("nombreUsuario")!.innerHTML = this.nombreEstudiante;
+    }
 
+    
+    fotoSeleccionada : string = "imagenPredeterminada.png"
     cargarDatosUsuario() {
         this.servicioUsuario.obtenerUsuarioActual().subscribe(datos => {
             var nombreAux = String(datos.nombre);
             var nombreCorto = nombreAux.split(" ");
             document.getElementById("nombreUsuario")!.textContent = nombreCorto[0];
-            document.getElementById("imagenUsuario")!.textContent = nombreCorto[0];
         });
     }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { Router } from '@angular/router';
 
 interface Fotos{
   valor: string;
@@ -37,10 +40,34 @@ export class PerfilEditarComponent implements OnInit {
     {"nombre":"Sebastian Valdebenito", "correo":"sebastian.valdebenito@gmail.com", "rut":"20.542.452-3"}
   ]
 
-  constructor() { }
+  constructor(private servicioAutenticacion:AutenticacionService,private servicioUsuario:UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
+    this.cargarDatosUsuario();
+    document.getElementById("nombreUsuario")!.textContent = "HOLA COM";
   }
+
+  public botonCerrarSesion(): void {
+    this.servicioAutenticacion.cerrarSesion();
+    this.router.navigate(['/iniciar-sesion']);
+  }
+
+
+
+cargarDatosUsuario() {
+  this.servicioUsuario.obtenerUsuarioActual().subscribe(datos => {
+    var aux = String(datos.nombre);
+    var aux2 = aux.split(" ");
+    document.getElementById("correoFotoEditado")!.textContent = datos.email;
+    document.getElementById("nombreSimple")!.textContent = aux2[0];
+    document.getElementById("nombreUsuario2")!.setAttribute("value",datos.nombre);
+    document.getElementById("correoUsuario2")!.setAttribute("value",datos.email);
+    document.getElementById("rutUsuario2")!.setAttribute("value",datos.rut);
+    document.getElementById("floatingTextarea2")!.textContent = datos.tags;
+
+    this.fotoSeleccionada = datos.imagen;
+  });
+}
 
   funcionGuardar(){
     console.log("guardar");
