@@ -12,6 +12,33 @@
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
+.mensajeAdmin{
+    text-align: center;
+    padding-top: 0.5%;
+}
+
+.form-control{
+    padding-bottom: 10%;
+}
+
+.paddingBoton{
+    padding-top: 1%;
+}
+
+.botonAdmin{
+    background: #3D99CE;
+    box-shadow: none;
+    border: none;
+    font-size: 1.2rem;
+    width: 14rem;
+}
+
+.adminMensaje{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+
 #foroMasVistos {
 
     h1{

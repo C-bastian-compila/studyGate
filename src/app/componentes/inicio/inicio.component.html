@@ -2,6 +2,19 @@
     <app-encabezado></app-encabezado>
     <app-navbar></app-navbar>
 
+    <div class="container align-items-center mensajeAdmin">
+        <h1>MENSAJE PARA LOS USUARIOS DE STUDY GATE</h1>
+        <div *ngIf="tipoUsuario">
+            <form [formGroup]="mensajeAdminFormulario" novalidate>
+                <input type="text" value="{{mensaje}}" class="form-control mensajeAdmin" id="mensajeAdmin2" formControlName="mensajeAdmin5">
+                <button class="btn btn-primary botonAdmin" type="submit">Guardar cambios</button>
+            </form>
+        </div>
+        <div *ngIf="!tipoUsuario">
+            <h4>{{mensaje}}</h4>
+        </div>
+    </div>
+
     <section>
         <!-- <div class="slide-container">
 
