@@ -1,6 +1,14 @@
 # StudyGate
 
-------------- ESTA ES LA RAMA V4 -------------
+----------------------------------------------------------------------------------------------------------------------------------
+Para ejecutar:
+    - En /backend hacer npm i
+    - En /backend hacer tsc --watch
+    - Abrir otra consola y en /backend hacer node src/js/index.js
+    - Abrir otra consola y hacer npm i
+    - Ejecutar ng serve
+----------------------------------------------------------------------------------------------------------------------------------
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 

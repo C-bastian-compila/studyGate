@@ -48,7 +48,6 @@ export class PerfilComponent implements OnInit {
 
     ngOnInit(): void {
         this.cargarDatosUsuario();
-        document.getElementById("nombreUsuario")!.textContent = "HOLA COM";
     }
 
     public botonCerrarSesion(): void {
