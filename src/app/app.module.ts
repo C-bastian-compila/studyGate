@@ -33,6 +33,7 @@ import { CrearForoComponent } from './componentes/crear-foro/crear-foro.componen
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { PerfilEditarComponent } from './componentes/perfil-editar/perfil-editar.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { MensajeComponent } from './componentes/mensaje/mensaje.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     PerfilComponent,
     PerfilEditarComponent,
     CrearForoComponent,
-    PiePaginaComponent
+    PiePaginaComponent,
+    MensajeComponent
   ],
   imports: [
     BrowserModule,
