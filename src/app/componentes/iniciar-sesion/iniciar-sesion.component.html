@@ -38,6 +38,19 @@
                         </mat-form-field>
                     </div>
 
+                    <!-- RECAPTCHA -->
+
+                    <!-- <div class="container">
+                        <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+                        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                            <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+                        </div>
+                    </div> -->
+
+                    <div class="container">
+                        <ngx-recaptcha2 #captchaElem siteKey="6LcPMcAgAAAAAAdVpth13SaEL22z4XHGx1FNkFJq" formControlName = "recaptcha" class="captcha"> </ngx-recaptcha2>
+                    </div>
+
                     <!-- BOTON ENVIAR FORMULARIO-->
 
                     <button id="botonIngresar" bmat-raised-button [disabled]="!formularioIniciarSesion.valid" color="primary" type="submit">Ingresar</button>

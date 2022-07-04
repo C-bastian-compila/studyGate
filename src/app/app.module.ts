@@ -32,6 +32,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { CrearForoComponent } from './componentes/crear-foro/crear-foro.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
 import { PerfilEditarComponent } from './componentes/perfil-editar/perfil-editar.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -63,6 +64,8 @@ import { PerfilEditarComponent } from './componentes/perfil-editar/perfil-editar
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+
+    NgxCaptchaModule,
 
     FormsModule,
     ReactiveFormsModule,

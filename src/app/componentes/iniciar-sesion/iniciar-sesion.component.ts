@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
-import {FormBuilder,FormGroup,Validators} from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+
 import { UsuarioInterfaz } from 'src/app/models/usuario';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+
 
 @Component({
     selector: 'app-iniciar-sesion',
     templateUrl: './iniciar-sesion.component.html',
     styleUrls: ['./iniciar-sesion.component.scss']
 })
+
 export class IniciarSesionComponent implements OnInit {
 
     formularioIniciarSesion:FormGroup;
+
+    token: string|undefined;
+
+    public robot: boolean | undefined;
 
     constructor(private Form:FormBuilder, private servicio:AutenticacionService, private router: Router) {
         this.formularioIniciarSesion = this.Form.group({
@@ -21,9 +30,24 @@ export class IniciarSesionComponent implements OnInit {
             ]],
             clave:['',[
                 Validators.required
+            ]],
+            recaptcha:['',[
+                Validators.required
             ]]
         });
         // this.datos = new Sesion("","")
+        this.token = undefined;
+    }
+
+    public send(form: NgForm): void {
+        if (form.invalid) {
+          for (const control of Object.keys(form.controls)) {
+            form.controls[control].markAsTouched();
+          }
+          return;
+        }
+    
+        console.debug(`Token [${this.token}] generated`);
     }
 
     ngOnInit(): void {
