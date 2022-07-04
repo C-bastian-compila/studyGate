@@ -11,17 +11,36 @@
     padding-right: 10%;
 }
 
+#correoFotoEditado{
+    color: #ced4da;
+}
+
 .form-control:focus {
     box-shadow: none;
     border-color: #3D99CE
 }
 
-.botonPerfil {
+.botonEliminar {
     background: #3D99CE;
     box-shadow: none;
     border: none;
     font-size: 1.2rem;
-    width: 6rem;
+
+}
+
+.botonAplicar {
+    background: #3D99CE;
+    box-shadow: none;
+    border: none;
+    font-size: 1.2rem;
+
+}
+
+.botonAtras{
+    background: #3D99CE;
+    box-shadow: none;
+    border: none;
+    font-size: 1.2rem;
 }
 
 .botones{

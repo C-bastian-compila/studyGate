@@ -32,6 +32,7 @@ import { SoporteComponent } from './componentes/soporte/soporte.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { CrearForoComponent } from './componentes/crear-foro/crear-foro.component';
 import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.component';
+import { PerfilEditarComponent } from './componentes/perfil-editar/perfil-editar.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
     RegistroComponent,
     SoporteComponent,
     PerfilComponent,
+    PerfilEditarComponent,
     CrearForoComponent,
     PiePaginaComponent
   ],

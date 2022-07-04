@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import { Router } from '@angular/router';
+import { Sesion } from '../iniciar-sesion/Sesion';
 
 
 interface Fotos{
@@ -21,23 +22,6 @@ export class PerfilComponent implements OnInit {
     }
     private infoUsuario:any;
     fotoSeleccionada: string = "imagenPredeterminada.png";
-    
-
-    fotosConstructor: Fotos[] = [
-        {valor: 'fotoPredeterminada.png', foto: 'Por defecto'},
-        {valor: 'fotoPerfil1.jpg', foto: 'Foto 1'},
-        {valor: 'fotoPerfil2.jpg', foto: 'Foto 2'},
-        {valor: 'fotoPerfil3.jpg', foto: 'Foto 3'},
-        {valor: 'fotoPerfil4.jpg', foto: 'Foto 4'},
-        {valor: 'fotoPerfil5.jpg', foto: 'Foto 5'},
-        {valor: 'fotoPerfil6.jpg', foto: 'Foto 6'},
-        {valor: 'fotoPerfil7.jpg', foto: 'Foto 7'},
-        {valor: 'fotoPerfil8.jpg', foto: 'Foto 8'},
-        {valor: 'fotoPerfil9.jpg', foto: 'Foto 9'},
-        {valor: 'fotoPerfil10.jpg', foto: 'Foto 10'},
-        {valor: 'fotoPerfil11.jpg', foto: 'Foto 11'},
-        {valor: 'fotoPerfil12.jpg', foto: 'Foto 12'},
-    ]
 
     usuarios = [
         {"nombre":"Francisco Leiva", "correo":"francisco.leiva@gmail.com", "rut":"20.542.805-5"},
@@ -48,6 +32,7 @@ export class PerfilComponent implements OnInit {
 
     ngOnInit(): void {
         this.cargarDatosUsuario();
+        this.fotoSeleccionada = this.servicioUsuario.imagenUsuarioActual();
     }
 
     public botonCerrarSesion(): void {
@@ -68,7 +53,7 @@ export class PerfilComponent implements OnInit {
             document.getElementById("rutUsuario2")!.setAttribute("value",datos.rut);
             document.getElementById("floatingTextarea2")!.textContent = datos.tags;
 
-            this.fotoSeleccionada = datos.imagen;
+            document.getElementById("nombreSimple")!.textContent = aux2[0];
         });
     }
  
